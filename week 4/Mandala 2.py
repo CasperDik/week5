@@ -23,22 +23,7 @@ for i in range(15):
         for j in range(sides):
             casper.forward(x)
             casper.right(angle)
-
-    if sides % 2 == 0:
-        a = (x * (i + 1)) / (2 * math.tan(((180 / sides)) * 3.14159 / 180))
-        casper.penup()
-        casper.setposition(0, 0)
-        casper.left(90)
-        casper.forward(a)
-        casper.left(90)
-        casper.forward((x*(i+1))/2)
-        casper.left(180)
-        casper.pendown()
-        for g in range(sides):
-            casper.forward(x * (i + 1))
-            casper.right(angle)
-
-    if sides % 2 >=1 and sides!=3:
+    else:
         a = (x * (i + 1)) / (2 * math.tan(((180 / sides)) * 3.14159 / 180))
         casper.penup()
         casper.setposition(0, 0)
