@@ -172,13 +172,99 @@ for i in range(5):
     casper.right(144)
 
 screen.exitonclick()
+#1
+list = [160, -43, 270, -97, -43, 200, -940, 17, -86]
+odd = 0
+for i in list:
+    if i % 2 != 0:
+        odd = odd + 1
+print(odd)
 
-# 1
+#2
+list = [160, -43, 270, -97, -43, 200, -940, 17, -86]
+sum = 0
+
+for i in list:
+    if i % 2 == 0:
+        sum = sum + i
+print(sum)
+# 3
 list = [160, -43, 270, -97, -43, 200, -940, 17, -86]
 sum = 0
 
 for i in list:
     if i % 2 != 0:
-        counter
+        sum = sum + i
+print(sum)
 
+#4
+list = ["January", "February", "March", "April"]
+wordlen5 = 0
+for i in list:
+    if len(i) == 5:
+        wordlen5 = wordlen5 + 1
+print(wordlen5)
 
+#5
+list = [160, -43, 270, -97, -43, 200, -940, 17, -86]
+count = 0
+skipped = False
+
+for i in list:
+    if i % 2 == 0 and not skipped:
+        skipped =  True
+        continue
+    count = count + i
+print(count)
+
+#6
+list = ["casper", "lisanne" ,"sam", "erik"]
+count = 0
+
+for i in list:
+    if i == "sam":
+        count = count + 1
+        print(count)
+        break
+    count = count + 1
+
+#7
+n = float(input("of what number do you want the sqrt?:"))
+approximation = float(input("what is your best guess?"))
+better = (approximation + n/approximation)/2
+print(better)
+
+for i in range(6):
+    better = (better + n/better)/2
+    print(better)
+
+#8
+n = int(input("n"))
+for n in range(n):
+    T = (n)*(n + 1) / 2
+    print(T)
+#9
+x = int(input("number:"))
+
+if n >= 2:
+    for n in range(2, x):
+        if x % n == 0:
+            print(False)
+            break
+    else:
+        print(True)
+else:
+    print(False)
+
+#10
+import turtle
+screen = turtle.Screen()
+casper = turtle.Turtle()
+
+list = [(160, 20), (-43, 10), (270, 8), (-43, 12)]
+
+for right, forward in list:
+    casper.forward(forward)
+    casper.right(right)
+
+screen.exitonclick()
