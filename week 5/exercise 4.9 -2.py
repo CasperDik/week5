@@ -8,10 +8,14 @@ def square(casper, size):
 screen = turtle.Screen()
 casper = turtle.Turtle()
 size = 10
+center = 10
+x = 0
+y = 0
 for i in range(5):
+    casper.setposition(x + center, y + center)
     square(casper, size)
-    casper.penup()
-    casper.forward(2*size)
-    casper.pendown()
+    size = size * 2
+    center = center *2
+
 
 screen.exitonclick()
