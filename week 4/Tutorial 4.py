@@ -5,17 +5,17 @@ day_number = int(input("daynumber?: "))
 
 if day_number == 0:
     print("Sun")
-if day_number == 1:
+elif day_number == 1:
     print("Mon")
-if day_number == 2:
+elif day_number == 2:
     print("Tue")
-if day_number == 3:
+elif day_number == 3:
     print("Wed")
-if day_number == 4:
+elif day_number == 4:
     print("Thu")
-if day_number == 5:
+elif day_number == 5:
     print("Fri")
-if day_number == 6:
+elif day_number == 6:
     print("Sat")
 
 # 2
@@ -26,17 +26,17 @@ return_day = (length_stay % 7) + day_number
 
 if day_number2 == 0:
     print("Sun")
-if day_number2 == 1:
+elif day_number2 == 1:
     print("Mon")
-if day_number2 == 2:
+elif day_number2 == 2:
     print("Tue")
-if day_number2 == 3:
+elif day_number2 == 3:
     print("Wed")
-if day_number2 == 4:
+elif day_number2 == 4:
     print("Thu")
-if day_number2 == 5:
+elif day_number2 == 5:
     print("Fri")
-if day_number2 == 6:
+elif day_number2 == 6:
     print("Sat")
 
 # 3
@@ -268,3 +268,20 @@ for right, forward in list:
     casper.right(right)
 
 screen.exitonclick()
+
+#11
+
+import turtle
+screen = turtle.Screen()
+casper = turtle.Turtle()
+
+
+list = [(0, 100), (90, 100), (135, 141.42), (-135,100), (-90,100), (135,70.71), (90, 70.71), (90, 141.42)]
+casper.speed(2)
+
+for left, forward in list:
+    casper.left(left)
+    casper.forward(forward)
+
+screen.exitonclick()
+

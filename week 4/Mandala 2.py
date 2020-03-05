@@ -4,7 +4,7 @@ import math
 screen = turtle.Screen()
 casper = turtle.Turtle()
 casper.speed(10)
-
+colors = ["blue", "green", "red", "yellow", "purple"]
 
 x = 10 # base length sides
 
