@@ -4,4 +4,4 @@ def scalar_mult(scalar, vector):
     print(vector)
 
 
-scalar_mult(2, [2,4,5,6])
+scalar_mult(7, [3,0,5,11,2])
