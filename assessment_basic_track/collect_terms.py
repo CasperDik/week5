@@ -12,3 +12,6 @@ def createlist(n):
 n = int(input("how many bingo terms do you want to add to the list: "))
 createlist(n)
 
+# Check if a term hasn't been added before
+# Register how often a term has been added to indicate how relevant a term is
+
