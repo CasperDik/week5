@@ -10,13 +10,20 @@ def create_bingo_card():
 
     for i in range(25):
         random_word = random.choice(list_3)
-        card.append(random_word)           # create list with 25 terms
+        card.append(random_word)  # create list with 25 terms
         list_3.remove(random_word)
 
     bingo_card = numpy.array(card)
-    bingo_card = bingo_card.reshape([5,5])      # reshape list in 5x5 grid
+    bingo_card = bingo_card.reshape([5, 5])  # reshape list in 5x5 grid
     print(bingo_card)
 
-    #has to be interactive card?
 
-create_bingo_card()
+def generate_bingo_cards():
+    new_card = "no"
+    create_bingo_card()
+    new_card = input("Do you want to generate a new bingo card: ")
+    while (new_card == "yes"):
+        create_bingo_card()
+        new_card = input("Do you want to generate a new bingo card: ")
+
+generate_bingo_cards()
