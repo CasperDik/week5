@@ -57,7 +57,10 @@ def draw_terms():
 def play_bingo():
     n = int(input("how many bingo terms do you want to add to the list: "))
     createlist(n)
+    //
     generate_bingo_cards()
     draw_terms()
+
+    # of drawn term on bingo card then "X"
 
 play_bingo()
