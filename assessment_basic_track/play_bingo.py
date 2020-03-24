@@ -3,33 +3,18 @@
 
 def createlist(n):
     terms = list()
-    for i in range(n):                  #inputs
-        x = input("Please write here the bingo terms: ")
-        terms.append(x)
-    myfile= open("terms.txt", "a+")
-    for i in terms:                     #terms to file
+    myfile = open("terms.txt", "a+")
+
+    for i in range(n):  # inputs
+        if terms in myfile:
+            print("This word has already been added to the list")
+        else:
+            x = input("Please write here the bingo terms: ")
+            terms.append(x)
+
+    for i in terms:  # terms to file
         myfile.write(i)
         myfile.write("\n")
-
-def create_bingo_card():
-    import random
-    import numpy
-
-    read = open("terms.txt").read()
-    read = read[0:]
-    list = read.split()
-    list_3 = list.copy()
-    card = []
-
-    for i in range(25):
-        random_word = random.choice(list_3)
-        card.append(random_word)  # create list with 25 terms
-        list_3.remove(random_word)
-
-    bingo_card = numpy.array(card)
-    bingo_card = bingo_card.reshape([5, 5])  # reshape list in 5x5 grid
-    print("Welcome to bingo! This is your bingo card \n", bingo_card)
-    numpy.savetxt("bingo_card.txt", numpy.array(bingo_card), fmt="%s")
 
 def generate_bingo_cards():
     new_card = "no"
@@ -99,11 +84,8 @@ def play_bingo():
     generate_bingo_cards()
     check_terms()
 
-
 play_bingo()
 
 #to do
 #improve storing terms to list --> not ask for number but break loop in another way
-#Check if a term hasn't been added before
-#(extra) Register how often a term has been added to indicate how relevant a term is
-#layout array?
+
