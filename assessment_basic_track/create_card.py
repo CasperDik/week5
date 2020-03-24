@@ -1,3 +1,6 @@
+#bingo program LC
+#made by Casper Dik
+
 def create_bingo_card():
     import random
     import numpy

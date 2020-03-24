@@ -1,3 +1,6 @@
+#bingo program LC
+#made by Casper Dik
+
 def draw_terms():
     import random
     import time

@@ -1,4 +1,4 @@
-#bingo program
+#bingo program LC
 #made by Casper Dik
 
 def createlist(n):
