@@ -1,4 +1,4 @@
-def draw_terms():
+def check_terms():
         import random
         import time
         import numpy
@@ -30,4 +30,4 @@ def draw_terms():
                 print("Unfortunate,", random_word , "is not on your bingocard")
             time.sleep(3)  # wait x seconds before looping again
 
-draw_terms()
+check_terms()

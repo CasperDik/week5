@@ -25,7 +25,7 @@ def create_bingo_card():
 
     bingo_card = numpy.array(card)
     bingo_card = bingo_card.reshape([5, 5])  # reshape list in 5x5 grid
-    print(bingo_card)
+    print("Welcome to bingo! This is your bingo card \n", bingo_card)
     numpy.savetxt("bingo_card.txt", numpy.array(bingo_card), fmt="%s")
 
 def generate_bingo_cards():
@@ -53,16 +53,53 @@ def draw_terms():
         list_2.remove(random_word)
         time.sleep(10)              #wait 10 seconds before looping again
 
+def check_terms():
+        import random
+        import time
+        import numpy
+
+        read = open("terms.txt").read()
+        read = read[0:]
+        list = read.split()
+        list_2 = list.copy()
+        n = len(list_2)
+
+        bingocard = open("bingo_card.txt").read()
+        bingocard2 = bingocard.split()
+
+        for i in range(n):
+            print("This is round number", (i + 1))
+            time.sleep(2)
+            random_word = random.choice(list_2)
+            print("The drawn word is: ", random_word)
+            time.sleep(2)
+            list_2.remove(random_word)
+            if random_word in bingocard2:
+                print("YES!", random_word, "is on your bingocard!!")
+                time.sleep(2)
+                bingocard2[bingocard2.index(random_word)] = "X"
+                bc = numpy.array(bingocard2)
+                bc = bc.reshape([5, 5])
+                print("This is your current bingocard: \n", bc)
+            else:
+                print("Unfortunate,", random_word, "is not on your bingocard")
+            time.sleep(3)  # wait x seconds before looping again
 
 
 def play_bingo():
     n = int(input("how many bingo terms do you want to add to the list: "))
     createlist(n)
     generate_bingo_cards()
+    check_terms()
 
-    draw_terms()
-
-
-    # of drawn term on bingo card then "X"
 
 play_bingo()
+
+
+
+#to do
+#Check if a term hasn't been added before
+#(extra) Register how often a term has been added to indicate how relevant a term is
+#(extra) When a row, column or diagonal has been completed indicate to the user they should call out "Bingo!"
+
+#print("You have bingo!!! Shout "BINGO" and claim your price!")
