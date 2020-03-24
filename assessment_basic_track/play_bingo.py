@@ -26,6 +26,7 @@ def create_bingo_card():
     bingo_card = numpy.array(card)
     bingo_card = bingo_card.reshape([5, 5])  # reshape list in 5x5 grid
     print(bingo_card)
+    numpy.savetxt("bingo_card.txt", numpy.array(bingo_card), fmt="%s")
 
 def generate_bingo_cards():
     new_card = "no"
@@ -57,9 +58,10 @@ def draw_terms():
 def play_bingo():
     n = int(input("how many bingo terms do you want to add to the list: "))
     createlist(n)
-    //
     generate_bingo_cards()
+
     draw_terms()
+
 
     # of drawn term on bingo card then "X"
 

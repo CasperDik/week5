@@ -16,6 +16,7 @@ def create_bingo_card():
     bingo_card = numpy.array(card)
     bingo_card = bingo_card.reshape([5, 5])  # reshape list in 5x5 grid
     print(bingo_card)
+    numpy.savetxt("bingo_card.txt", numpy.array(bingo_card), fmt="%s")
 
 
 def generate_bingo_cards():
