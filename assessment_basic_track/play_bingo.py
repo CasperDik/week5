@@ -2,20 +2,37 @@
 #made by Casper Dik
 
 def createlist():
-    terms = list()
     myfile = open("terms.txt", "a+")
     x = 0
-    print("Hello! First we need to create a bingocard. \n" "Write below the bingo term you want to add. \n" "If you have added all your words, press enter.")
     while x != "":
-        if terms in myfile:
+        x = input("Please write here the bingo terms you want to add: ")
+        read = open("terms.txt").read()
+        read = read[0:]
+        terms = read.split()
+        if x in terms:
             print("This word has already been added to the list")
         else:
-            x = input("Please write here the bingo terms you want to add: ")
-            terms.append(x)
+            myfile.write(x)
+            myfile.write("\n")
 
-    for i in terms:                     #terms to file
-        myfile.write(i)
-        myfile.write("\n")
+def full_list():
+    createlist()
+    read = open("terms.txt").read()
+    read = read[0:]
+    list = read.split()
+    y = len(list)
+    o = 25 - y
+    while o > 0:
+        read = open("terms.txt").read()
+        read = read[0:]
+        list = read.split()
+        y = len(list)
+        o = 25 - y
+        if o <= 0:
+            break
+        else:
+            print("Oops, you have to at least add", o, "terms to play bingo")
+            createlist()
 
 def create_bingo_card():
     import random
@@ -87,11 +104,10 @@ def check_terms():
             i = 0                           # test for diagonal bingo
             if bc[i, j] == bc[i + 1, j + 1] == bc[i + 2, j + 2] == bc[i + 3, j + 3] == bc[i + 4, j + 4] == "X":
                 x = 1
-                                        # test for diagonal bingo
-            j = 4
+            j = 4                           # test for diagonal bingo
             if bc[i, j] == bc[i + 1, j - 1] == bc[i + 2, j - 2] == bc[i + 3, j - 3] == bc[i + 4, j - 4] == "X":
                 x = 1
-        if x == 1:
+        elif x == 1:
             print("You have bingo!!! Shout BINGO and claim your price!")
             break
         else:
@@ -99,7 +115,8 @@ def check_terms():
         time.sleep(t)  # wait x seconds before looping again
 
 def play_bingo():
-    createlist()
+    print("Hello! First we need to create a bingocard. \n" "Add below the bingo terms you would like to add(at least 25 in total). \n" "If you have added all your words, press enter.")
+    full_list()
     generate_bingo_cards()
     check_terms()
 

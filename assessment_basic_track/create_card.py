@@ -21,7 +21,6 @@ def create_bingo_card():
     print(bingo_card)
     numpy.savetxt("bingo_card.txt", numpy.array(bingo_card), fmt="%s")
 
-
 def generate_bingo_cards():
     new_card = "no"
     create_bingo_card()
